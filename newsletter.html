@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Newsletter</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        header {
+            background: #ff758c;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            position: relative;
+        }
+        header img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .newsletter-content {
+            text-align: left;
+        }
+        .newsletter-content ul {
+            padding: 0;
+            list-style: none;
+        }
+        .newsletter-content li {
+            margin: 15px 0;
+            padding: 10px;
+            background: #ffe0e6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .newsletter-content li img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .truth {
+            display: block;
+            font-style: italic;
+            color: #555;
+        }
+        .subscribe input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .subscribe button {
+            background: #ff758c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .subscribe button:hover {
+            background: #ff5a7a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://images.pexels.com/photos/3993437/pexels-photo-3993437.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Skincare Banner">
+            <h1>Skincare Myths Busted!</h1>
+            <p>Get the truth behind common skincare misconceptions</p>
+        </header>
+        
+        <section class="newsletter-content">
+            <h2>The Truth Behind Popular Skincare Misconceptions</h2>
+            <ul>
+                <li>
+                    <img src="https://images.pexels.com/photos/16160239/pexels-photo-16160239.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Moisturizer">
+                    <strong>Myth #1:</strong> Oily Skin Doesn’t Need Moisturizer <br> 
+                    <span class="truth">Skipping moisturizer makes skin produce more oil. Use a lightweight, non-comedogenic moisturizer.</span>
+                </li>
+                <li>
+                    <img src="https://images.pexels.com/photos/5938606/pexels-photo-5938606.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Expensive Products">
+                    <strong>Myth #2:</strong> Expensive Skincare Works Better <br> 
+                    <span class="truth">Drugstore products often have the same active ingredients as luxury brands.</span>
+                </li>
+                <li>
+                    <img src="https://images.pexels.com/photos/5217889/pexels-photo-5217889.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Natural Ingredients">
+                    <strong>Myth #3:</strong> Natural Ingredients Are Always Safe <br> 
+                    <span class="truth">Not all natural ingredients suit every skin type. Always patch-test!</span>
+                </li>
+                <li>
+                    <img src="https://images.pexels.com/photos/6150637/pexels-photo-6150637.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="Sunscreen">
+                    <strong>Myth #4:</strong> You Only Need Sunscreen on Sunny Days <br> 
+                    <span class="truth">UV rays penetrate clouds and windows—daily SPF is a must!</span>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="subscribe">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest skincare tips and myths busted.</p>
+            <form id="subscribe-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p id="message"></p>
+        </section>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('#subscribe-form').submit(function(event) {
+                event.preventDefault();
+                var email = $('#email').val();
+                if(email) {
+                    $('#message').text('Thank you for subscribing!').css('color', 'green');
+                    $('#email').val('');
+                } else {
+                    $('#message').text('Please enter a valid email.').css('color', 'red');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
